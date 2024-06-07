@@ -6,7 +6,7 @@ We introduce ReALLM, a novel approach for compression and memory-efficient adapt
 Pre-trained matrices are decomposed into a high-precision low-rank component and a vector-quantized latent representation (using an autoencoder).
 During the fine-tuning step, only the low-rank components are updated. Our results show that pre-trained matrices exhibit different patterns.
 ReALLM adapts the shape of the encoder (small/large embedding, high/low bit VQ, etc.) to each matrix.
-ReALLM proposes to represent each matrix with a small embedding on b bits and a neural decoder model $\mathcal{D}_\phi$ with its weights on $b_\phi$ bits.
+ReALLM proposes to represent each matrix with a small embedding on b bits and a neural decoder model `$\mathcal{D}_\phi$` with its weights on `$b_\phi$` bits.
 The decompression of a matrix requires only one embedding and a single forward pass with the decoder.
 Our weight-only quantization algorithm yields the best results on language generation tasks (C4 and WikiText-2) for a budget of 3 bits without any training.
 With a budget of 2 bits, ReALLM achieves state-of-the art performance after fine-tuning on a small calibration dataset.
