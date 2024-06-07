@@ -1,0 +1,38 @@
+act: gelu
+batchSize: 2  # 2
+block_params: '1_1'
+conv_type: ['convnext', 'quantpshuffel'] # 'quantpshuffel']  #  'LUQ#7']  # 'pshuffel']
+dec_strds: [2, 2, 2, 2, 2]  #[5, 3, 2, 2, 2]
+device: 3
+distributed: false
+embed: ''
+enc_dim: '64_16'  #  '64_16' # TODO
+enc_strds: [2, 2, 2, 2, 2]  # []
+encoder_file: ''
+epochs: 20000
+eval_fps: false
+eval_freq: 100
+fc_hw: '9_16'
+ks: '0_1_5'  # '0_3_3'
+loss: L2
+wbits: 6  # default: 5
+lower_width: 12 # 32
+lr: 0.001  # 0.00035 # 0.00019 # without qunt: 0.001
+lr_type: cosine_0.1_1_0.1  # cosine_0.1_1_0  # cosine_0.1_1_0 # without qunt: cosine_0.1_1_0.1
+manualSeed: 1
+modelsize: 7.2  # 7.15  # 7.5  # 5.2  # 4.5 # 1.5
+norm: none
+not_resume: false
+num_blks: '1_1'
+out_bias: tanh
+overwrite: false
+print_freq: 50
+quant_axis: 0
+quant_embed_bit: 16
+quant_model_bit: 16 #  7  # 16
+reduce: 1.2
+resize_list: '-1'
+saturate_stages: -1
+start_epoch: -1
+weight: None
+workers: 4

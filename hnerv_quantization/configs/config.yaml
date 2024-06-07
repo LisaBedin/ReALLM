@@ -1,0 +1,22 @@
+hydra:
+  run:
+    dir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+outf: '/mnt/data/lisa/LLM_results/checkpoints'
+
+
+llm_path: '/mnt/data/lisa/LLM_pretrained_models/mistral7b'
+layer_type: 'q'
+layer_depth: 0
+p_size: 512
+
+defaults:
+  - _self_
+  - model: hnerv # nerv
+
+wandb:
+  mode: online # Pass in 'wandb.mode=online' to turn on wandb logging
+  project: HNERV
+  entity: phdlisa
+  id: null # Set to string to resume logging from run
+  job_type: training
